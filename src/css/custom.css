@@ -1,0 +1,59 @@
+/* サイト全体の色と文字。リンクの色は白い背景で読める濃さ（コントラスト比 4.5 以上）にしている */
+
+:root {
+  --ifm-color-primary: #8e44ad;
+  --ifm-color-primary-dark: #803d9c;
+  --ifm-color-primary-darker: #793a93;
+  --ifm-color-primary-darkest: #632f79;
+  --ifm-color-primary-light: #9c4bbe;
+  --ifm-color-primary-lighter: #a253c4;
+  --ifm-color-primary-lightest: #b16fcd;
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: system-ui, -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+    "Yu Gothic UI", Meiryo, sans-serif;
+  --ifm-line-height-base: 1.75;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #d0a2e6;
+  --ifm-color-primary-dark: #c487df;
+  --ifm-color-primary-darker: #bd7adc;
+  --ifm-color-primary-darkest: #a855d0;
+  --ifm-color-primary-light: #dcbded;
+  --ifm-color-primary-lighter: #e2caf0;
+  --ifm-color-primary-lightest: #f3e9f9;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* 画面の図は枠を付け、横幅いっぱいまでにする */
+.markdown img {
+  max-width: 100%;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+}
+
+/* 本文の日本語は、文節の区切り（ビルドで入れた <wbr>）でだけ改行する。句読点や小さい「ゃ」などで行を始めない。
+   1つの文節が欄に収まらないときだけ、文節の途中で折り返す。
+   overflow-wrap: anywhere にしないのは、表の列の幅を決めるときにも途中で切れる前提になって列が細くなり、文節の途中で切れるため */
+.markdown {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+
+
+/* 前と後など、比べる図は表で横に並べる。列を同じ幅にして、画像を欄の幅に収める
+   （Infima の表は横にスクロールする箱になっているので、画像の入った表だけふつうの表に戻す） */
+.markdown table:has(img) {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.markdown table:has(img) th {
+  text-align: center;
+}
+.markdown table:has(img) img {
+  width: 100%;
+  height: auto;
+}

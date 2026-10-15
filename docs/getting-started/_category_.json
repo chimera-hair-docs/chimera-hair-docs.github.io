@@ -1,0 +1,12 @@
+{
+  "label": "かんたんな使い方",
+  "position": 2,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "かんたんな使い方",
+    "description": "はじめて使うときの流れです。やりたいことに近いほうを選んでください。",
+    "slug": "/getting-started"
+  }
+}

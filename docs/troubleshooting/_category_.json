@@ -1,0 +1,12 @@
+{
+  "label": "困ったとき",
+  "position": 3,
+  "collapsible": true,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "困ったとき",
+    "description": "困っていることに近いほうを選んでください。右上の検索欄に、画面に出たメッセージや困っていることを入れて探すこともできます。",
+    "slug": "/troubleshooting"
+  }
+}
